@@ -91,11 +91,13 @@ class Unfiltered_Text_Widget extends WP_Widget
 			$instance,
 			array(
 				'text'       => '',
-				'visibility' => $this->get_default_visibility()
+				'visibility' => $this->get_default_visibility(),
+				'title'      => ''
 			)
 		);
 
 		$text = format_to_edit( $instance[ 'text' ] );
+		print $this->get_title_html( $instance[ 'title' ], 'title' );
 		print $this->get_textarea( $text, 'text' );
 		print $this->get_visibility_html( $instance[ 'visibility' ], 'visibility' );
 	}
@@ -150,6 +152,31 @@ class Unfiltered_Text_Widget extends WP_Widget
 		}
 
 		return "$out</ul></fieldset>";
+	}
+
+	/**
+	 * print the text input for the widget title
+	 *
+	 * @since  2014.01.22
+	 * @param  string $title The fields value
+	 * @param  string $name  The fields name
+	 * @return string
+	 */
+	protected function get_title_html( $value, $name )
+	{
+		return sprintf(
+			'<p>
+			<label for="%1$s">
+			%4$s
+			<input type="text" id="%1$s" name="%2$s" value="%3$s" placeholder="%5$s">
+			</label>
+			</p>',
+			$this->get_field_id( $name ),
+			$this->get_field_name( $name ),
+			esc_attr( $value ),
+			__( 'Title', 'plugin_magic_widgets' ),
+			__( 'A brief description', 'plugin_magic_widgets' )
+		);
 	}
 
 	/**
