@@ -1,0 +1,24 @@
+{
+    "name": "toscho/wp-magic-widgets",
+    "description": "Extra widgets for your HTML headers and footers.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0",
+    "keywords": [ "WordPress, Widgets, Sidebars" ],
+    "homepage": "https://github.com/toscho/WP-Magic-Widgets",
+    "authors": [
+        {
+            "name": "Thomas Scholz",
+            "homepage": "http://toscho.de",
+            "role": "Developer"
+        },
+        {
+            "name": "David Naber",
+            "homepage": "https://dnaber.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/toscho/WP-Magic-Widgets/issues",
+        "forum": "https://wordpress.org/support/plugin/magic-widgets"
+    }
+}
